@@ -1,0 +1,22 @@
+name: Trigger Pipeline
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  trigger-pipeline:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Push Pipeline
+        uses: peter-evans/repository-dispatch@v2
+        with:
+          token: ${{ secrets.GITHUB_AUT_TOKEN }}
+          repository: Automated
+          event-type: repo-a-changed
+          client-payload: |
+           {
+            sha: ${{ github.sha }}
+            repo: ${{ github.repository }}
+            branch: ${{ github.ref_name }}
+           }
