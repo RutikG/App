@@ -12,7 +12,7 @@ jobs:
         uses: peter-evans/repository-dispatch@v2
         with:
           token: ${{ secrets.AUT_TOKEN }}
-          repository: Automated
+          repository: RutikG/Automated
           event-type: repo-a-changed
           client-payload: |
            {
