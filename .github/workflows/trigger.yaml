@@ -16,7 +16,7 @@ jobs:
           event-type: repo-a-changed
           client-payload: |
            {
-            sha: ${{ github.sha }}
-            repo: ${{ github.repository }}
-            branch: ${{ github.ref_name }}
+            "sha": "${{ github.sha }}",
+            "repo": "${{ github.repository }}",
+            "branch": "${{ github.ref_name }}"
            }
