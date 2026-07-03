@@ -11,7 +11,7 @@ jobs:
       - name: Trigger Push Pipeline
         uses: peter-evans/repository-dispatch@v2
         with:
-          token: ${{ secrets.GITHUB_AUT_TOKEN }}
+          token: ${{ secrets.AUT_TOKEN }}
           repository: Automated
           event-type: repo-a-changed
           client-payload: |
